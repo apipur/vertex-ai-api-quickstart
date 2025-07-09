@@ -1340,22 +1340,171 @@ select.form-control {
   padding-bottom: var(--space-32);
 }
 
-/* Table of Contents */
-.toc {
+/* Hamburger Menu */
+.hamburger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 44px;
+  height: 44px;
   background: var(--color-surface);
-  border: 1px solid var(--color-card-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-24);
-  margin-bottom: var(--space-32);
-  box-shadow: var(--shadow-sm);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
 }
 
-.toc h2 {
-  margin-bottom: var(--space-16);
+.hamburger-menu:hover {
+  background: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.05);
+}
+
+.hamburger-menu:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.hamburger-menu.active span {
+  background: var(--color-btn-primary-text);
+}
+
+/* Hide hamburger when sidebar is open */
+body.sidebar-open .hamburger-menu {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+/* Sidebar TOC */
+.sidebar-toc {
+  position: fixed;
+  top: 0;
+  left: -350px;
+  width: 350px;
+  height: 100vh;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-card-border);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-24);
+  padding-top: var(--space-24);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+.sidebar-toc.sidebar-open {
+  left: 0;
+}
+
+/* Sidebar Close Button */
+.sidebar-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-base);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  z-index: 1001;
+}
+
+.sidebar-close-btn:hover {
+  background: var(--color-secondary-hover);
   color: var(--color-primary);
-  font-size: var(--font-size-2xl);
+  transform: scale(1.1);
+}
+
+.sidebar-close-btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.sidebar-close-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  margin-bottom: var(--space-20);
+  padding-bottom: var(--space-16);
   border-bottom: 2px solid var(--color-primary);
-  padding-bottom: var(--space-8);
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
+  width: 100%;
+  text-align: left;
+}
+
+/* Body overlay when sidebar is open */
+body.sidebar-open::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.sidebar-open {
+  overflow: hidden;
+}
+
+/* Adjust main content when sidebar is open on larger screens */
+@media (min-width: 1024px) {
+  body.sidebar-open .main {
+    margin-left: 350px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  body.sidebar-open::before {
+    display: none;
+  }
+  
+  body.sidebar-open {
+    overflow: auto;
+  }
+  
+  .hamburger-menu {
+    top: 24px;
+    left: 24px;
+  }
 }
 
 .toc-list {
@@ -1617,6 +1766,7 @@ html {
 @media (max-width: 768px) {
   .header {
     padding: var(--space-20) 0;
+    padding-left: 80px;
   }
   
   .header h1 {
@@ -1631,12 +1781,19 @@ html {
     padding: var(--space-16);
   }
   
-  .toc {
+  .sidebar-toc {
+    width: 300px;
+    left: -300px;
     padding: var(--space-16);
   }
   
+  .sidebar-toc.sidebar-open {
+    left: 0;
+  }
+  
   .toc-list a {
-    padding: var(--space-6) var(--space-12);
+    padding: var(--space-8) var(--space-12);
+    font-size: var(--font-size-sm);
   }
   
   .section h2 {
@@ -1654,6 +1811,68 @@ html {
   .step-image {
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   }
+  
+  .hamburger-menu {
+    width: 44px;
+    height: 44px;
+    top: 16px;
+    left: 16px;
+  }
+  
+  .hamburger-menu span {
+    height: 2px;
+  }
+  
+  .sidebar-header h2 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .sidebar-close-btn {
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .sidebar-close-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .header {
+    padding-left: 70px;
+  }
+  
+  .sidebar-toc {
+    width: 280px;
+    left: -280px;
+  }
+  
+  .hamburger-menu {
+    width: 40px;
+    height: 40px;
+    top: 12px;
+    left: 12px;
+  }
+  
+  .sidebar-header h2 {
+    font-size: var(--font-size-base);
+  }
+  
+  .sidebar-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .sidebar-close-btn svg {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 /* Accessibility improvements */
@@ -1668,6 +1887,22 @@ html {
   
   .toc-list a:hover {
     transform: none;
+  }
+  
+  .hamburger-menu {
+    transition: none;
+  }
+  
+  .hamburger-menu:hover {
+    transform: none;
+  }
+  
+  .hamburger-menu span {
+    transition: none;
+  }
+  
+  .sidebar-toc {
+    transition: none;
   }
 }
 

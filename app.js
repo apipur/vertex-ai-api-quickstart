@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initAccessibilityEnhancements();
     initImageEnhancements();
     initProgressIndicator();
+    initSidebarToggle();
 });
 
 // Smooth scrolling for table of contents links
@@ -331,6 +332,110 @@ function initProgressIndicator() {
         
         progressBar.style.width = scrollPercent + '%';
     });
+}
+
+// Initialize sidebar toggle functionality
+function initSidebarToggle() {
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sidebar = document.getElementById('sidebarToc');
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    const body = document.body;
+    
+    function closeSidebar() {
+        sidebar.classList.remove('sidebar-open');
+        hamburgerMenu.classList.remove('active');
+        body.classList.remove('sidebar-open');
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
+        
+        // Announce to screen readers
+        const liveRegion = document.querySelector('[aria-live="polite"]');
+        if (liveRegion) {
+            liveRegion.textContent = 'Navigation closed';
+        }
+    }
+    
+    function openSidebar() {
+        sidebar.classList.add('sidebar-open');
+        hamburgerMenu.classList.add('active');
+        body.classList.add('sidebar-open');
+        hamburgerMenu.setAttribute('aria-expanded', 'true');
+        
+        // Announce to screen readers
+        const liveRegion = document.querySelector('[aria-live="polite"]');
+        if (liveRegion) {
+            liveRegion.textContent = 'Navigation opened';
+        }
+    }
+    
+    if (hamburgerMenu && sidebar) {
+        // Hamburger menu click - single toggle function
+        hamburgerMenu.addEventListener('click', function() {
+            const isOpen = sidebar.classList.contains('sidebar-open');
+            
+            if (isOpen) {
+                closeSidebar();
+            } else {
+                openSidebar();
+            }
+        });
+        
+        // Close button click
+        if (sidebarCloseBtn) {
+            sidebarCloseBtn.addEventListener('click', function() {
+                closeSidebar();
+                hamburgerMenu.focus();
+            });
+        }
+        
+        // Close sidebar when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+                if (sidebar.classList.contains('sidebar-open')) {
+                    closeSidebar();
+                }
+            }
+        });
+        
+        // Close sidebar when pressing Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
+                closeSidebar();
+                hamburgerMenu.focus();
+            }
+        });
+        
+        // Close sidebar when clicking on a link (mobile)
+        const tocLinks = sidebar.querySelectorAll('.toc-list a');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    closeSidebar();
+                }
+            });
+        });
+        
+        // Set initial aria-expanded attribute
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
+        
+        // Trap focus within sidebar when open
+        sidebar.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && sidebar.classList.contains('sidebar-open')) {
+                const focusableElements = sidebar.querySelectorAll(
+                    'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        });
+    }
 }
 
 // Add CSS for active TOC link and other dynamic styles
