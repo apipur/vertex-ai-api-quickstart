@@ -5,9 +5,9 @@
   --color-surface: rgba(255, 255, 253, 1);
   --color-text: rgba(19, 52, 59, 1);
   --color-text-secondary: rgba(98, 108, 113, 1);
-  --color-primary: rgba(33, 128, 141, 1);
-  --color-primary-hover: rgba(29, 116, 128, 1);
-  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(94, 82, 64, 0.12);
   --color-secondary-hover: rgba(94, 82, 64, 0.2);
   --color-secondary-active: rgba(94, 82, 64, 0.25);
@@ -16,10 +16,10 @@
   --color-card-border: rgba(94, 82, 64, 0.12);
   --color-card-border-inner: rgba(94, 82, 64, 0.12);
   --color-error: rgba(192, 21, 47, 1);
-  --color-success: rgba(33, 128, 141, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(168, 75, 47, 1);
   --color-info: rgba(98, 108, 113, 1);
-  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
   --color-select-caret: rgba(19, 52, 59, 0.8);
 
   /* Common style patterns */
@@ -27,11 +27,11 @@
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
   --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
@@ -107,20 +107,20 @@
     --color-background: rgba(31, 33, 33, 1);
     --color-surface: rgba(38, 40, 40, 1);
     --color-text: rgba(245, 245, 245, 1);
-    --color-text-secondary: rgba(167, 169, 169, 0.7);
-    --color-primary: rgba(50, 184, 198, 1);
-    --color-primary-hover: rgba(45, 166, 178, 1);
-    --color-primary-active: rgba(41, 150, 161, 1);
+    --color-text-secondary: rgba(167, 169, 169, 0.85);
+    --color-primary: rgba(20, 74, 153, 1);
+    --color-primary-hover: rgba(17, 63, 130, 1);
+    --color-primary-active: rgba(15, 56, 115, 1);
     --color-secondary: rgba(119, 124, 124, 0.15);
     --color-secondary-hover: rgba(119, 124, 124, 0.25);
     --color-secondary-active: rgba(119, 124, 124, 0.3);
-    --color-border: rgba(119, 124, 124, 0.3);
+    --color-border: rgba(119, 124, 124, 0.4);
     --color-error: rgba(255, 84, 89, 1);
-    --color-success: rgba(50, 184, 198, 1);
+    --color-success: rgba(20, 74, 153, 1);
     --color-warning: rgba(230, 129, 97, 1);
     --color-info: rgba(167, 169, 169, 1);
-    --color-focus-ring: rgba(50, 184, 198, 0.4);
-    --color-btn-primary-text: rgba(19, 52, 59, 1);
+    --color-focus-ring: rgba(20, 74, 153, 0.6);
+    --color-btn-primary-text: rgba(255, 255, 255, 1);
     --color-card-border: rgba(119, 124, 124, 0.2);
     --color-card-border-inner: rgba(119, 124, 124, 0.15);
     --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -134,11 +134,11 @@
     --focus-outline: 2px solid var(--color-primary);
     --status-bg-opacity: 0.15;
     --status-border-opacity: 0.25;
-    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* RGB versions for dark mode */
-    --color-success-rgb: 50, 184, 198;
+    --color-success-rgb: 20, 74, 153;
     --color-error-rgb: 255, 84, 89;
     --color-warning-rgb: 230, 129, 97;
     --color-info-rgb: 167, 169, 169;
@@ -151,18 +151,18 @@
   --color-surface: rgba(38, 40, 40, 1);
   --color-text: rgba(245, 245, 245, 1);
   --color-text-secondary: rgba(167, 169, 169, 0.7);
-  --color-primary: rgba(50, 184, 198, 1);
-  --color-primary-hover: rgba(45, 166, 178, 1);
-  --color-primary-active: rgba(41, 150, 161, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(119, 124, 124, 0.15);
   --color-secondary-hover: rgba(119, 124, 124, 0.25);
   --color-secondary-active: rgba(119, 124, 124, 0.3);
   --color-border: rgba(119, 124, 124, 0.3);
   --color-error: rgba(255, 84, 89, 1);
-  --color-success: rgba(50, 184, 198, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(230, 129, 97, 1);
   --color-info: rgba(167, 169, 169, 1);
-  --color-focus-ring: rgba(50, 184, 198, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
   --color-btn-primary-text: rgba(19, 52, 59, 1);
   --color-card-border: rgba(119, 124, 124, 0.15);
   --color-card-border-inner: rgba(119, 124, 124, 0.15);
@@ -176,11 +176,11 @@
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
   --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for dark mode */
-  --color-success-rgb: 50, 184, 198;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 255, 84, 89;
   --color-warning-rgb: 230, 129, 97;
   --color-info-rgb: 167, 169, 169;
@@ -191,9 +191,9 @@
   --color-surface: rgba(255, 255, 253, 1);
   --color-text: rgba(19, 52, 59, 1);
   --color-text-secondary: rgba(98, 108, 113, 1);
-  --color-primary: rgba(33, 128, 141, 1);
-  --color-primary-hover: rgba(29, 116, 128, 1);
-  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(94, 82, 64, 0.12);
   --color-secondary-hover: rgba(94, 82, 64, 0.2);
   --color-secondary-active: rgba(94, 82, 64, 0.25);
@@ -202,13 +202,13 @@
   --color-card-border: rgba(94, 82, 64, 0.12);
   --color-card-border-inner: rgba(94, 82, 64, 0.12);
   --color-error: rgba(192, 21, 47, 1);
-  --color-success: rgba(33, 128, 141, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(168, 75, 47, 1);
   --color-info: rgba(98, 108, 113, 1);
-  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
 
   /* RGB versions for light mode */
-  --color-success-rgb: 33, 128, 141;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
@@ -660,9 +660,9 @@ select.form-control {
   --color-surface: rgba(255, 255, 253, 1);
   --color-text: rgba(19, 52, 59, 1);
   --color-text-secondary: rgba(98, 108, 113, 1);
-  --color-primary: rgba(33, 128, 141, 1);
-  --color-primary-hover: rgba(29, 116, 128, 1);
-  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(94, 82, 64, 0.12);
   --color-secondary-hover: rgba(94, 82, 64, 0.2);
   --color-secondary-active: rgba(94, 82, 64, 0.25);
@@ -671,10 +671,10 @@ select.form-control {
   --color-card-border: rgba(94, 82, 64, 0.12);
   --color-card-border-inner: rgba(94, 82, 64, 0.12);
   --color-error: rgba(192, 21, 47, 1);
-  --color-success: rgba(33, 128, 141, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(168, 75, 47, 1);
   --color-info: rgba(98, 108, 113, 1);
-  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
   --color-select-caret: rgba(19, 52, 59, 0.8);
 
   /* Common style patterns */
@@ -682,11 +682,11 @@ select.form-control {
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
   --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for opacity control */
-  --color-success-rgb: 33, 128, 141;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
@@ -762,20 +762,20 @@ select.form-control {
     --color-background: rgba(31, 33, 33, 1);
     --color-surface: rgba(38, 40, 40, 1);
     --color-text: rgba(245, 245, 245, 1);
-    --color-text-secondary: rgba(167, 169, 169, 0.7);
-    --color-primary: rgba(50, 184, 198, 1);
-    --color-primary-hover: rgba(45, 166, 178, 1);
-    --color-primary-active: rgba(41, 150, 161, 1);
+    --color-text-secondary: rgba(167, 169, 169, 0.85);
+    --color-primary: rgba(20, 74, 153, 1);
+    --color-primary-hover: rgba(17, 63, 130, 1);
+    --color-primary-active: rgba(15, 56, 115, 1);
     --color-secondary: rgba(119, 124, 124, 0.15);
     --color-secondary-hover: rgba(119, 124, 124, 0.25);
     --color-secondary-active: rgba(119, 124, 124, 0.3);
-    --color-border: rgba(119, 124, 124, 0.3);
+    --color-border: rgba(119, 124, 124, 0.4);
     --color-error: rgba(255, 84, 89, 1);
-    --color-success: rgba(50, 184, 198, 1);
+    --color-success: rgba(20, 74, 153, 1);
     --color-warning: rgba(230, 129, 97, 1);
     --color-info: rgba(167, 169, 169, 1);
-    --color-focus-ring: rgba(50, 184, 198, 0.4);
-    --color-btn-primary-text: rgba(19, 52, 59, 1);
+    --color-focus-ring: rgba(20, 74, 153, 0.6);
+    --color-btn-primary-text: rgba(255, 255, 255, 1);
     --color-card-border: rgba(119, 124, 124, 0.2);
     --color-card-border-inner: rgba(119, 124, 124, 0.15);
     --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
@@ -789,11 +789,11 @@ select.form-control {
     --focus-outline: 2px solid var(--color-primary);
     --status-bg-opacity: 0.15;
     --status-border-opacity: 0.25;
-    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* RGB versions for dark mode */
-    --color-success-rgb: 50, 184, 198;
+    --color-success-rgb: 20, 74, 153;
     --color-error-rgb: 255, 84, 89;
     --color-warning-rgb: 230, 129, 97;
     --color-info-rgb: 167, 169, 169;
@@ -806,18 +806,18 @@ select.form-control {
   --color-surface: rgba(38, 40, 40, 1);
   --color-text: rgba(245, 245, 245, 1);
   --color-text-secondary: rgba(167, 169, 169, 0.7);
-  --color-primary: rgba(50, 184, 198, 1);
-  --color-primary-hover: rgba(45, 166, 178, 1);
-  --color-primary-active: rgba(41, 150, 161, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(119, 124, 124, 0.15);
   --color-secondary-hover: rgba(119, 124, 124, 0.25);
   --color-secondary-active: rgba(119, 124, 124, 0.3);
   --color-border: rgba(119, 124, 124, 0.3);
   --color-error: rgba(255, 84, 89, 1);
-  --color-success: rgba(50, 184, 198, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(230, 129, 97, 1);
   --color-info: rgba(167, 169, 169, 1);
-  --color-focus-ring: rgba(50, 184, 198, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
   --color-btn-primary-text: rgba(19, 52, 59, 1);
   --color-card-border: rgba(119, 124, 124, 0.15);
   --color-card-border-inner: rgba(119, 124, 124, 0.15);
@@ -831,11 +831,11 @@ select.form-control {
   --focus-outline: 2px solid var(--color-primary);
   --status-bg-opacity: 0.15;
   --status-border-opacity: 0.25;
-  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23144a99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for dark mode */
-  --color-success-rgb: 50, 184, 198;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 255, 84, 89;
   --color-warning-rgb: 230, 129, 97;
   --color-info-rgb: 167, 169, 169;
@@ -846,9 +846,9 @@ select.form-control {
   --color-surface: rgba(255, 255, 253, 1);
   --color-text: rgba(19, 52, 59, 1);
   --color-text-secondary: rgba(98, 108, 113, 1);
-  --color-primary: rgba(33, 128, 141, 1);
-  --color-primary-hover: rgba(29, 116, 128, 1);
-  --color-primary-active: rgba(26, 104, 115, 1);
+  --color-primary: rgba(20, 74, 153, 1);
+  --color-primary-hover: rgba(17, 63, 130, 1);
+  --color-primary-active: rgba(15, 56, 115, 1);
   --color-secondary: rgba(94, 82, 64, 0.12);
   --color-secondary-hover: rgba(94, 82, 64, 0.2);
   --color-secondary-active: rgba(94, 82, 64, 0.25);
@@ -857,13 +857,13 @@ select.form-control {
   --color-card-border: rgba(94, 82, 64, 0.12);
   --color-card-border-inner: rgba(94, 82, 64, 0.12);
   --color-error: rgba(192, 21, 47, 1);
-  --color-success: rgba(33, 128, 141, 1);
+  --color-success: rgba(20, 74, 153, 1);
   --color-warning: rgba(168, 75, 47, 1);
   --color-info: rgba(98, 108, 113, 1);
-  --color-focus-ring: rgba(33, 128, 141, 0.4);
+  --color-focus-ring: rgba(20, 74, 153, 0.4);
 
   /* RGB versions for light mode */
-  --color-success-rgb: 33, 128, 141;
+  --color-success-rgb: 20, 74, 153;
   --color-error-rgb: 192, 21, 47;
   --color-warning-rgb: 168, 75, 47;
   --color-info-rgb: 98, 108, 113;
@@ -1970,3 +1970,28 @@ html {
 .step-image[alt=""] {
   outline: 2px solid var(--color-error);
 }
+
+/* Dark mode text color overrides for better readability */
+@media (prefers-color-scheme: dark) {
+  a { color: rgba(255, 255, 255, 1) !important; }
+  a:hover { color: rgba(240, 240, 240, 1) !important; }
+  .sidebar-header h2 { color: rgba(255, 255, 255, 1) !important; }
+  .nav-list a:hover { color: rgba(240, 240, 240, 1) !important; }
+  .nav-close-btn:hover { color: rgba(240, 240, 240, 1) !important; }
+  .section h2 { color: rgba(255, 255, 255, 1) !important; }
+  .section li strong { color: rgba(255, 255, 255, 1) !important; }
+  .section ol li::marker { color: rgba(255, 255, 255, 1) !important; }
+  .section ul li::marker { color: rgba(255, 255, 255, 1) !important; }
+  .status--success { color: rgba(255, 255, 255, 1) !important; }
+}
+
+[data-color-scheme="dark"] a { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] a:hover { color: rgba(240, 240, 240, 1) !important; }
+[data-color-scheme="dark"] .sidebar-header h2 { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] .nav-list a:hover { color: rgba(240, 240, 240, 1) !important; }
+[data-color-scheme="dark"] .nav-close-btn:hover { color: rgba(240, 240, 240, 1) !important; }
+[data-color-scheme="dark"] .section h2 { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] .section li strong { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] .section ol li::marker { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] .section ul li::marker { color: rgba(255, 255, 255, 1) !important; }
+[data-color-scheme="dark"] .status--success { color: rgba(255, 255, 255, 1) !important; }
