@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up GCP Vertex AI API for Gemini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Setting Up GCP Vertex AI API for Gemini</h1>
+            <p class="subtitle">Step-by-Step Instructions with Visual Guidance</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <nav class="toc">
+                <h2>Table of Contents</h2>
+                <ol class="toc-list">
+                    <li><a href="#prerequisites">Prerequisites</a></li>
+                    <li><a href="#step-1">Step 1: Register Your Google Cloud Platform Account</a></li>
+                    <li><a href="#step-2">Step 2: Create a New Project</a></li>
+                    <li><a href="#step-3">Step 3: Enable Billing for Your Project</a></li>
+                    <li><a href="#step-4">Step 4: Enable Required APIs</a></li>
+                    <li><a href="#step-5">Step 5: Create Service Account</a></li>
+                    <li><a href="#step-6">Step 6: Generate JSON Credentials</a></li>
+                </ol>
+            </nav>
+
+            <section id="prerequisites" class="section">
+                <h2>Prerequisites</h2>
+                <p>Before starting the setup process, ensure you have the following:</p>
+                <ul>
+                    <li>A valid email address (preferably a business email for team use)</li>
+                    <li>A credit or debit card for identity verification</li>
+                    <li>Administrative access to set up billing for your organization</li>
+                </ul>
+            </section>
+
+            <section id="step-1" class="section">
+                <h2>Step 1: Register Your Google Cloud Platform Account</h2>
+                
+                <div class="subsection">
+                    <h3>Create Your GCP Account</h3>
+                    <ol>
+                        <li><strong>Navigate to Google Cloud Platform</strong> - Go to <code>cloud.google.com</code> in your web browser - Click on "Get started for free" or "Try for free" button</li>
+                        <li><strong>Sign in with Google Account</strong> - Use an existing Google account or create a new one - For team use, consider creating a dedicated Google account for your organization - Accept the Terms of Service when prompted</li>
+                        <li><strong>Complete Account Setup</strong> - Select your country from the dropdown menu - Choose "Individual" or "Business" based on your use case - For small teams, "Business" is recommended for better management features</li>
+                    </ol>
+
+                    <div class="image-container">
+                        <img src="img\get-started.jpg" alt="Google Cloud Platform get started page" class="step-image">
+                        <p class="image-caption">Google Cloud Platform get started page</p>
+                    </div>
+                    
+                </div>
+
+                <div class="note">
+                    <strong>Note:</strong> New Google Cloud users are eligible for $300 in free credits valid for 90 days, providing substantial resources to test and develop your Gemini applications without immediate costs.
+                </div>
+            </section>
+
+            <section id="step-2" class="section">
+                <h2>Step 2: Create a New Project</h2>
+                
+                <div class="subsection">
+                    <h3>Project Creation Process</h3>
+                    <ol>
+                        <li><strong>Access Project Creation</strong> - In the Google Cloud Console, click on the project dropdown at the top - Select "New Project" from the dropdown menu</li>
+                        <li><strong>Configure Project Details</strong> - Project Name: Choose a descriptive name (e.g., "Gemini-AI-Team-Project") - Project ID: This will be auto-generated but can be edited (cannot be changed later) - Organization: Select your organization if available, or leave as "No organization" - Location: Choose appropriate folder if you have organizational structure</li>
+                        <li><strong>Create the Project</strong> - Click "Create" to finalize the project setup - Wait for the project to be created (usually takes a few minutes)</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\create-project1.jpg"alt="Select a project" class="step-image">
+                        <p class="image-caption">Select a project</p>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="img\create-project2.jpg"alt="New project" class="step-image">
+                        <p class="image-caption">New project</p>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="img\create-project3.jpg"alt="Configure Project Details" class="step-image">
+                        <p class="image-caption">Configure Project Details</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="step-3" class="section">
+                <h2>Step 3: Enable Billing for Your Project</h2>
+                
+                <div class="subsection">
+                    <h3>Set Up Billing Account</h3>
+                    <ol>
+                        <li><strong>Navigate to Billing</strong> - In the Google Cloud Console, open the navigation menu (hamburger icon) - Select "Billing" from the menu</li>
+                        <li><strong>Create Billing Account</strong> - Click "Create Account" or "Add Billing Account" - Provide your business or personal details as required - Enter payment information (credit/debit card)</li>
+                        <li><strong>Verify Payment Method</strong> - Google will initiate a small verification charge (typically $1-2) - This amount will be refunded within 3-7 business days</li>
+                    </ol>
+
+                    <div class="image-container">
+                        <img src="img\billing1.jpg"alt="Create Billing Account" class="step-image">
+                        <p class="image-caption">Create Billing Account</p>
+                    </div>
+
+                </div>
+
+                <div class="subsection">
+                    <h3>Link Billing to Project</h3>
+                    <ol>
+                        <li><strong>Associate Billing Account</strong> - Navigate to "Billing" → "Manage Billing Accounts" - Click on "My Projects" tab - Find your project and click "Change Billing" - Select your billing account and click "Set Account"</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\billing2.jpg"alt="Change Billing Account" class="step-image">
+                        <p class="image-caption">Change Billing Account</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="step-4" class="section">
+                <h2>Step 4: Enable Required APIs</h2>
+                
+                <div class="subsection">
+                    <h3>Enable Vertex AI API</h3>
+                    <ol>
+                        <li><strong>Access API Library</strong> - Navigate to "APIs & Services" → "Library" - Search for "Vertex AI API" - Click on the Vertex AI API result - Click "Enable" button</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\api1.jpg"alt="Enable Vertex AI API" class="step-image">
+                        <p class="image-caption">Enable Vertex AI API</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Verification</h3>
+                    <ol>
+                        <li>Go to "APIs & Services" → "Enabled APIs" to confirm the Vertex AI API is active</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\api2.jpg"alt="Confirm the Vertex AI API is active" class="step-image">
+                        <p class="image-caption">Enable Vertex AI API</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-5" class="section">
+                <h2>Step 5: Create Service Account</h2>
+                
+                <div class="subsection">
+                    <h3>Service Account Creation</h3>
+                    <ol>
+                        <li><strong>Navigate to IAM & Admin</strong> - Go to "IAM & Admin" → "Service Accounts" - Click "Create Service Account"</li>
+                        <li><strong>Configure Service Account Details</strong> - Service Account Name: e.g., "Vertex AI Gemini Service Account" - Service Account ID: This will auto-populate (e.g., vertex-ai-gemini-sa) - Description: "Service account for Vertex AI Gemini API access" - Click "Create and Continue"</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\service-account1.jpg"alt="Create service account dialog with configuration fields" class="step-image">
+                        <p class="image-caption">Create service account dialog with configuration fields</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>Assign Roles and Permissions</h3>
+                    <ol>
+                        <li><strong>Grant Required Roles</strong> - In the role selection section, add these roles: Vertex AI User (roles/aiplatform.user)</li>
+                        <li><strong>Complete Setup</strong> - Click "Continue" after adding roles - Skip the optional "Grant users access to this service account" section - Click "Done" to finalize creation</li>
+                    </ol>
+                    
+                    <div class="image-container">
+                        <img src="img\service-account2.jpg"alt="Grant Required Roles" class="step-image">
+                        <p class="image-caption">Grant Required Roles</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="step-6" class="section">
+                <h2>Step 6: Generate JSON Credentials</h2>
+                
+                <div class="subsection">
+                    <h3>Create Service Account Key</h3>
+                    <ol>
+                        <li><strong>Access Service Account</strong> - From the Service Accounts list, click on your newly created service account email - Navigate to the "Keys" tab</li>
+                        <li><strong>Generate New Key</strong> - Click "Add Key" → "Create New Key" - Select "JSON" as the key type - Click "Create"</li>
+                        <li><strong>Download and Secure JSON File</strong> - The JSON file will automatically download to your computer - Important: Store this file securely - it cannot be downloaded again - Rename the file to something recognizable (e.g., gemini-service-account-key.json)</li>
+                    </ol>
+
+                    <div class="image-container">
+                        <img src="img\key1.jpg"alt="Create a new key" class="step-image">
+                        <p class="image-caption">Create a new key</p>
+                    </div>
+                    
+                    <div class="image-container">
+                        <img src="img\key2.jpg"alt="Download the JSON key" class="step-image">
+                        <p class="image-caption">Download the JSON key</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3>JSON File Structure</h3>
+                    <p>Your downloaded JSON file will contain:</p>
+                    <ul>
+                        <li><code>project_id</code>: Your Google Cloud project ID</li>
+                        <li><code>private_key_id</code>: Unique identifier for the private key</li>
+                        <li><code>private_key</code>: The actual RSA private key (PEM encoded)</li>
+                        <li><code>client_email</code>: Service account email address</li>
+                        <li><code>client_id</code>: Service account's unique ID</li>
+                        <li><code>client_x509_cert_url</code>: Certificate URL for verification</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 GCP Vertex AI Setup Guide. This guide is provided for educational purposes.</p>
+        </div>
+    </footer> -->
+
+    <script src="app.js"></script>
+</body>
+</html>
