@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initSidebarToggle();
 });
 
-// Smooth scrolling for table of contents links
+// Smooth scrolling for navigation links
 function initSmoothScrolling() {
-    const tocLinks = document.querySelectorAll('.toc-list a');
+    const navLinks = document.querySelectorAll('.nav-list a');
     
-    tocLinks.forEach(link => {
+    navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -45,10 +45,10 @@ function initSmoothScrolling() {
     });
 }
 
-// Highlight active section in table of contents
+// Highlight active section in navigation
 function initActiveSection() {
     const sections = document.querySelectorAll('section[id]');
-    const tocLinks = document.querySelectorAll('.toc-list a');
+    const navLinks = document.querySelectorAll('.nav-list a');
     
     // Create intersection observer to track visible sections
     const observer = new IntersectionObserver((entries) => {
@@ -56,13 +56,13 @@ function initActiveSection() {
             if (entry.isIntersecting) {
                 const activeId = entry.target.id;
                 
-                // Remove active class from all TOC links
-                tocLinks.forEach(link => {
+                // Remove active class from all nav links
+                navLinks.forEach(link => {
                     link.classList.remove('active');
                 });
                 
                 // Add active class to current section link
-                const activeLink = document.querySelector(`.toc-list a[href="#${activeId}"]`);
+                const activeLink = document.querySelector(`.nav-list a[href="#${activeId}"]`);
                 if (activeLink) {
                     activeLink.classList.add('active');
                 }
@@ -283,8 +283,8 @@ function initAccessibilityEnhancements() {
     document.body.appendChild(liveRegion);
     
     // Announce section changes
-    const tocLinks = document.querySelectorAll('.toc-list a');
-    tocLinks.forEach(link => {
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
         link.addEventListener('click', function() {
             const sectionTitle = this.textContent;
             setTimeout(() => {
@@ -336,16 +336,16 @@ function initProgressIndicator() {
 
 // Initialize sidebar toggle functionality
 function initSidebarToggle() {
-    const hamburgerMenu = document.getElementById('hamburgerMenu');
-    const sidebar = document.getElementById('sidebarToc');
-    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+    const navToggle = document.getElementById('navToggle');
+    const sidebar = document.getElementById('navigationSidebar');
+    const navCloseBtn = document.getElementById('navCloseBtn');
     const body = document.body;
     
     function closeSidebar() {
         sidebar.classList.remove('sidebar-open');
-        hamburgerMenu.classList.remove('active');
+        navToggle.classList.remove('active');
         body.classList.remove('sidebar-open');
-        hamburgerMenu.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-expanded', 'false');
         
         // Announce to screen readers
         const liveRegion = document.querySelector('[aria-live="polite"]');
@@ -356,9 +356,9 @@ function initSidebarToggle() {
     
     function openSidebar() {
         sidebar.classList.add('sidebar-open');
-        hamburgerMenu.classList.add('active');
+        navToggle.classList.add('active');
         body.classList.add('sidebar-open');
-        hamburgerMenu.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-expanded', 'true');
         
         // Announce to screen readers
         const liveRegion = document.querySelector('[aria-live="polite"]');
@@ -367,9 +367,9 @@ function initSidebarToggle() {
         }
     }
     
-    if (hamburgerMenu && sidebar) {
-        // Hamburger menu click - single toggle function
-        hamburgerMenu.addEventListener('click', function() {
+    if (navToggle && sidebar) {
+        // Navigation toggle click - single toggle function
+        navToggle.addEventListener('click', function() {
             const isOpen = sidebar.classList.contains('sidebar-open');
             
             if (isOpen) {
@@ -380,16 +380,16 @@ function initSidebarToggle() {
         });
         
         // Close button click
-        if (sidebarCloseBtn) {
-            sidebarCloseBtn.addEventListener('click', function() {
+        if (navCloseBtn) {
+            navCloseBtn.addEventListener('click', function() {
                 closeSidebar();
-                hamburgerMenu.focus();
+                navToggle.focus();
             });
         }
         
         // Close sidebar when clicking outside
         document.addEventListener('click', function(e) {
-            if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+            if (!sidebar.contains(e.target) && !navToggle.contains(e.target)) {
                 if (sidebar.classList.contains('sidebar-open')) {
                     closeSidebar();
                 }
@@ -400,13 +400,13 @@ function initSidebarToggle() {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && sidebar.classList.contains('sidebar-open')) {
                 closeSidebar();
-                hamburgerMenu.focus();
+                navToggle.focus();
             }
         });
         
         // Close sidebar when clicking on a link (mobile)
-        const tocLinks = sidebar.querySelectorAll('.toc-list a');
-        tocLinks.forEach(link => {
+        const navLinks = sidebar.querySelectorAll('.nav-list a');
+        navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
                     closeSidebar();
@@ -415,7 +415,7 @@ function initSidebarToggle() {
         });
         
         // Set initial aria-expanded attribute
-        hamburgerMenu.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-expanded', 'false');
         
         // Trap focus within sidebar when open
         sidebar.addEventListener('keydown', function(e) {
@@ -438,10 +438,10 @@ function initSidebarToggle() {
     }
 }
 
-// Add CSS for active TOC link and other dynamic styles
+// Add CSS for active nav link and other dynamic styles
 const style = document.createElement('style');
 style.textContent = `
-    .toc-list a.active {
+    .nav-list a.active {
         background: var(--color-primary);
         color: var(--color-btn-primary-text);
     }

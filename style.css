@@ -1340,8 +1340,8 @@ select.form-control {
   padding-bottom: var(--space-32);
 }
 
-/* Hamburger Menu */
-.hamburger-menu {
+/* Navigation Toggle */
+.nav-toggle {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -1361,18 +1361,18 @@ select.form-control {
   transition: all 0.3s ease;
 }
 
-.hamburger-menu:hover {
+.nav-toggle:hover {
   background: var(--color-secondary);
   box-shadow: var(--shadow-lg);
   transform: scale(1.05);
 }
 
-.hamburger-menu:focus {
+.nav-toggle:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-.hamburger-menu span {
+.nav-toggle span {
   display: block;
   width: 100%;
   height: 3px;
@@ -1381,24 +1381,24 @@ select.form-control {
   transition: all 0.3s ease;
 }
 
-.hamburger-menu.active {
+.nav-toggle.active {
   background: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.hamburger-menu.active span {
+.nav-toggle.active span {
   background: var(--color-btn-primary-text);
 }
 
-/* Hide hamburger when sidebar is open */
-body.sidebar-open .hamburger-menu {
+/* Hide navigation toggle when sidebar is open */
+body.sidebar-open .nav-toggle {
   opacity: 0;
   pointer-events: none;
   transform: scale(0.8);
 }
 
-/* Sidebar TOC */
-.sidebar-toc {
+/* Navigation Sidebar */
+.navigation-sidebar {
   position: fixed;
   top: 0;
   left: -350px;
@@ -1414,12 +1414,12 @@ body.sidebar-open .hamburger-menu {
   transition: left 0.3s ease;
 }
 
-.sidebar-toc.sidebar-open {
+.navigation-sidebar.sidebar-open {
   left: 0;
 }
 
-/* Sidebar Close Button */
-.sidebar-close-btn {
+/* Navigation Close Button */
+.nav-close-btn {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1437,18 +1437,18 @@ body.sidebar-open .hamburger-menu {
   z-index: 1001;
 }
 
-.sidebar-close-btn:hover {
+.nav-close-btn:hover {
   background: var(--color-secondary-hover);
   color: var(--color-primary);
   transform: scale(1.1);
 }
 
-.sidebar-close-btn:focus {
+.nav-close-btn:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-.sidebar-close-btn svg {
+.nav-close-btn svg {
   width: 18px;
   height: 18px;
 }
@@ -1501,23 +1501,23 @@ body.sidebar-open {
     overflow: auto;
   }
   
-  .hamburger-menu {
+  .nav-toggle {
     top: 24px;
     left: 24px;
   }
 }
 
-.toc-list {
+.nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.toc-list li {
+.nav-list li {
   margin-bottom: var(--space-12);
 }
 
-.toc-list a {
+.nav-list a {
   display: block;
   padding: var(--space-8) var(--space-16);
   color: var(--color-text);
@@ -1527,7 +1527,7 @@ body.sidebar-open {
   font-weight: var(--font-weight-medium);
 }
 
-.toc-list a:hover {
+.nav-list a:hover {
   background: var(--color-secondary);
   color: var(--color-primary);
   transform: translateX(4px);
@@ -1689,7 +1689,7 @@ html {
     border-bottom: 2px solid var(--color-text);
   }
   
-  .toc {
+  .navigation-sidebar {
     page-break-after: always;
   }
   
@@ -1727,13 +1727,13 @@ html {
   }
   
   /* Hide shadows and backgrounds for better print */
-  .section, .toc, .image-container {
+  .section, .navigation-sidebar, .image-container {
     box-shadow: none !important;
     border: 1px solid var(--color-text) !important;
   }
   
   /* Ensure good contrast */
-  .section h2, .toc h2 {
+  .section h2, .navigation-sidebar h2 {
     color: var(--color-text) !important;
   }
   
@@ -1781,17 +1781,17 @@ html {
     padding: var(--space-16);
   }
   
-  .sidebar-toc {
+  .navigation-sidebar {
     width: 300px;
     left: -300px;
     padding: var(--space-16);
   }
   
-  .sidebar-toc.sidebar-open {
+  .navigation-sidebar.sidebar-open {
     left: 0;
   }
   
-  .toc-list a {
+  .nav-list a {
     padding: var(--space-8) var(--space-12);
     font-size: var(--font-size-sm);
   }
@@ -1812,14 +1812,14 @@ html {
     border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   }
   
-  .hamburger-menu {
+  .nav-toggle {
     width: 44px;
     height: 44px;
     top: 16px;
     left: 16px;
   }
   
-  .hamburger-menu span {
+  .nav-toggle span {
     height: 2px;
   }
   
@@ -1827,14 +1827,14 @@ html {
     font-size: var(--font-size-lg);
   }
   
-  .sidebar-close-btn {
+  .nav-close-btn {
     top: 16px;
     right: 16px;
     width: 32px;
     height: 32px;
   }
   
-  .sidebar-close-btn svg {
+  .nav-close-btn svg {
     width: 16px;
     height: 16px;
   }
@@ -1846,12 +1846,12 @@ html {
     padding-left: 70px;
   }
   
-  .sidebar-toc {
+  .navigation-sidebar {
     width: 280px;
     left: -280px;
   }
   
-  .hamburger-menu {
+  .nav-toggle {
     width: 40px;
     height: 40px;
     top: 12px;
@@ -1862,14 +1862,14 @@ html {
     font-size: var(--font-size-base);
   }
   
-  .sidebar-close-btn {
+  .nav-close-btn {
     top: 12px;
     right: 12px;
     width: 28px;
     height: 28px;
   }
   
-  .sidebar-close-btn svg {
+  .nav-close-btn svg {
     width: 14px;
     height: 14px;
   }
@@ -1881,33 +1881,33 @@ html {
     scroll-behavior: auto;
   }
   
-  .toc-list a {
+  .nav-list a {
     transition: none;
   }
   
-  .toc-list a:hover {
+  .nav-list a:hover {
     transform: none;
   }
   
-  .hamburger-menu {
+  .nav-toggle {
     transition: none;
   }
   
-  .hamburger-menu:hover {
+  .nav-toggle:hover {
     transform: none;
   }
   
-  .hamburger-menu span {
+  .nav-toggle span {
     transition: none;
   }
   
-  .sidebar-toc {
+  .navigation-sidebar {
     transition: none;
   }
 }
 
 /* Focus states for better keyboard navigation */
-.toc-list a:focus-visible {
+.nav-list a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
@@ -1919,11 +1919,11 @@ html {
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .section, .toc, .image-container {
+  .section, .navigation-sidebar, .image-container {
     border: 2px solid var(--color-text);
   }
   
-  .section h2, .toc h2 {
+  .section h2, .navigation-sidebar h2 {
     border-bottom: 3px solid var(--color-text);
   }
   
